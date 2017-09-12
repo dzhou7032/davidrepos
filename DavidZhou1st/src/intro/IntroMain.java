@@ -4,9 +4,10 @@ package intro;//this is a package declaration
 public class IntroMain {
 
 	public static void main(String[] args) {
-		
-		System.out.println("Hello World!");
-
+		//declaration of a local variable
+		//notice the use of the word 'new'
+		//new must be used to call a constructor
+		CodingConventions conventionsInstance = new CodingConventions();
 	}
 
 }
