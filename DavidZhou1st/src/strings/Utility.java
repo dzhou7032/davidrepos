@@ -23,8 +23,16 @@ public class Utility{
 	}
 
 	public static boolean keywordIsIsolated(int psn, String keyword, String s){
+		for (int i = 0; i<keyword.length();i++) {
+			if (s.substring(psn,psn++)!=" ") {
+				psn=psn+1;
+			}
+			else {
+				return false;
+			}
+			}
 		return true;
-	}
+		}
 
 	public static boolean noNegations(String s, int psn){
 		return true;
