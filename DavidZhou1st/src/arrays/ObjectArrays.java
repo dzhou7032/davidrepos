@@ -5,11 +5,14 @@ import arrays.student;
 public class ObjectArrays {
 
 	public ObjectArrays() {
-		Object[] people= new Object[20];
+		Person[] people = new Person[100];
+		Person[] people1 = new Person[100];
 		populate(people);
-		people[0]= new Thing("coffee maker");
-		for (Object P: people) {
-			System.out.println(P);
+		populate(people1);
+		for(Person p: people) {
+			p.mingle(people);
+			p.printFriends();
+			System.out.println("");
 		}
 	}
 	public void populate(Object[] people) {
@@ -39,5 +42,29 @@ public class ObjectArrays {
 	}
 	private String get(String[] a) {
 		return a[(int)(Math.random()*a.length)];
+	}
+	public Person[] selectGroup(Person[] population, int length) {
+		Person[] container = new Person[length];
+		for (int i=0;i<length;i++) {
+			int ran = (int)Math.random()*population.length-1;
+			for (int z=0;z<container.length;z++) {
+				if (container[z]==population[ran]) {
+					i=i-1;
+				}
+				else {
+					container[i]=population[ran];
+				}
+			}
+		}
+		return container;
+	}
+	public double countDifferences(Person[] arr1, Person[] arr2) {
+		int counter=0;
+		for (int i=0;i<arr1.length;i++) {
+			if (arr1[i]!=arr2[i]) {
+				counter++;
+			}
+		}
+		return counter;
 	}
 }
