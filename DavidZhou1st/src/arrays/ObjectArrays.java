@@ -14,6 +14,7 @@ public class ObjectArrays {
 			p.printFriends();
 			System.out.println("");
 		}
+		//System.out.print(Person.createNickname("Jonathan"));
 	}
 	public void populate(Object[] people) {
 		for (int i =0; i<people.length;i++) {

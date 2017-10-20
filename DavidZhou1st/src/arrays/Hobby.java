@@ -11,44 +11,6 @@ public class Hobby extends Thing {
 		Hobby[] someHobbies = {new Hobby("Programming"), new Hobby("dancing"), new Hobby("playing Video Games")};
 		return someHobbies[(int)(Math.random()*someHobbies.length)];
 	}
-	}
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
+
+

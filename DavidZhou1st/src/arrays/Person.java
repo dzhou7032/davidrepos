@@ -14,11 +14,13 @@ public class Person {
 	private Borough home;
 	private Hobby hobby;
 	private Person[] friends;
+	private String nickname;
 	public Person(String first, String last, Borough home) {
 		this.firstName= first;
 		this.lastName = last;
 		this.home = home;
 		this.hobby = Hobby.randomHobby();
+		this.nickname = createNickname(firstName);
 		friends = new Person[3];
 		
 	}
@@ -59,7 +61,34 @@ public class Person {
 		friends[0]=p;
 	}
 	public String toString() {
-		return "My name is "+firstName+" "+lastName+" and I live in "+home+".";
+		return "My name is "+firstName+" "+lastName+". Call me "+nickname+". I live in "+home+".";
 	}
+	public static String createNickname(String name) {
+		boolean foundVowel=false;
+		String placeh="";
+		for (int i=0;i<name.length();i++) {
+			if (name.substring(i,i+1).equals("a")||name.substring(i,i+1).equals("e")||name.substring(i,i+1).equals("i")||name.substring(i,i+1).equals("o")||name.substring(i,i+1).equals("u")) {
+				if (foundVowel == true) {
+					return placeh;
+				}
+				if (foundVowel == false) {
+					placeh=placeh+name.substring(i,i+1);
+					foundVowel = true;
+				}
+			}
+			else {
+				placeh=placeh+name.substring(i,i+1);
+			}
+		}
+		return name;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+		nickname = createNickname(firstName);
+	}
+	
 }
 
