@@ -31,5 +31,4 @@ public class CaveExplorer {
 		//later you can replace this line with the more sophisticated "multiline print" from Chatbot
 		System.out.println(s);
 	}
-
 }
