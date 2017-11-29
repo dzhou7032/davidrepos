@@ -55,14 +55,18 @@ public class Searching {
 
 
 	private int search(int[] searchThis, int startIndex, int endIndex, int target) {
-		if(target>searchThis[endIndex]/2) {
-			return search(searchThis, (endIndex/2), endIndex, target);
+		System.out.println(searchThis[startIndex] +" "+searchThis[endIndex]+" "+target);
+		if (startIndex==endIndex-1) {
+			return -1;
 		}
-		if(target<=searchThis[endIndex]/2) {
-			return search(searchThis, startIndex, endIndex/2, target);
+		if(searchThis[(startIndex+endIndex)/2] == target) {
+			return (startIndex+endIndex)/2;
 		}
-		if(searchThis[endIndex]/2 == target) {
-			return endIndex/2;
+		if(target>searchThis[(startIndex+endIndex)/2]) {
+			return search(searchThis, (startIndex+endIndex)/2, endIndex, target);
+		}
+		if(target<=searchThis[(startIndex+endIndex)/2]) {
+			return search(searchThis, startIndex, (startIndex+endIndex)/2, target);
 		}
 
 		return -1;
